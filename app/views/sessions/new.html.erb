@@ -1,0 +1,10 @@
+<h1>Smilestones</h1>
+<h2>Where memories come alive</h2>
+
+<br />
+<%= form_for @user do |f| %>
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit %>
+<% end %>
