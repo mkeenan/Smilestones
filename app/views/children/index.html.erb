@@ -1,3 +1,4 @@
+
 <h1>list of all of my children, add a child link - views/children/index</h1>
 
 <div>
@@ -6,4 +7,16 @@
     <li><%= c.name %></li>
     <% end %>
   </ul>
+</div>
 
+<div class="new-child-form">
+
+  <%= form_for :child do |c| %>
+    <%= c.text_field :name, placeholder: "Name", class: 'form-control' %>
+    <%= c.text_field :birth_date, placeholder: "Birthdate", class: 'form-control' %>
+    <br />
+    <%= c.submit "Add a child!", class: "btn" %>
+
+  <% end %>
+
+</div>

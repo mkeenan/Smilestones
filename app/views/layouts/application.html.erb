@@ -18,13 +18,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href='#'>Smilestones</a>
+      <div class="navbar-brand">
+        <%= link_to "Smilestones", :root %>
+      </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
         <li><%= link_to "My Children", children_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
