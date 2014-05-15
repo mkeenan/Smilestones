@@ -12,6 +12,7 @@
 <div class="new-child-form">
 
   <%= form_for :child do |c| %>
+    <%= c.hidden_field :user_id, :value => current_user.id %>
     <%= c.text_field :name, placeholder: "Name", class: 'form-control' %>
     <%= c.text_field :birth_date, placeholder: "Birthdate", class: 'form-control' %>
     <br />

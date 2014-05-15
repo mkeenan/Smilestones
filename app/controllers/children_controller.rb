@@ -3,18 +3,18 @@ class ChildrenController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @children = current_user.children
+    @children = current_user.children.all
   end
 
   def show
   end
 
   def new
-    @child = Child.new
+    @child = current_user.children.build
   end
 
   def create
-    @child = Child.new(params.require(:child).permit(:name, :birth_date))
+    @child = Child.new(params.require(:child).permit(:name, :birth_date, :user_id))
     if @child.save
       flash[:success] = "Success! You added another child."
       redirect_to :back
@@ -25,8 +25,7 @@ class ChildrenController < ApplicationController
 
 
   def edit
-    @child = current_user.child
-    @child.save
+    @child = child.find(params[:id])
     redirect_to child_path
   end
 
