@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     else
       session[:remember_token] = @user.id
       @current_user = @user
+      flash[:success] = "Welcome!"
       redirect_to children_path
     end
 

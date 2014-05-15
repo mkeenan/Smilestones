@@ -3,8 +3,10 @@
 
 <br />
 <%= form_for :session, :url=> sessions_path do |f| %>
-  Name: <%= f.text_field :name %>
   Email: <%= f.text_field :email %>
   Password: <%= f.password_field :password %>
   <%= f.submit 'Login' %>
+  <br>
+  </br>
+  <strong>New to Smilestones?<%= link_to " Sign up here...", new_user_path %></strong>
 <% end %>
