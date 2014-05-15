@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.new
+
   end
 
   def create
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     else
       session[:remember_token] = @user.id
       @current_user = @user
-      redirect_to root_path
+      redirect_to children_path
     end
 
   end

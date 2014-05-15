@@ -1,1 +1,9 @@
-<h1>list of all of my children, add a child link</h1>
+<h1>list of all of my children, add a child link - views/children/index</h1>
+
+<div>
+  <ul>
+    <% @children.each do |c| %>
+    <li><%= c.name %></li>
+    <% end %>
+  </ul>
+

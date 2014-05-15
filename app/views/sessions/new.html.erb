@@ -2,9 +2,9 @@
 <h2>Where memories come alive</h2>
 
 <br />
-<%= form_for @user do |f| %>
+<%= form_for :session, :url=> sessions_path do |f| %>
   Name: <%= f.text_field :name %>
   Email: <%= f.text_field :email %>
   Password: <%= f.password_field :password %>
-  <%= f.submit %>
+  <%= f.submit 'Log In' %>
 <% end %>

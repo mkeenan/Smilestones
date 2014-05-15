@@ -1,0 +1,7 @@
+
+
+<%= form_for(@child) do |c| %>
+  Name: <%= c.text_field :name %>
+  Birthdate: <%= c.text_field :birth_date %>
+  <%= c.submit %>
+<% end %>
