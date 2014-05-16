@@ -1,20 +1,22 @@
-<h1> views/child/show - Show individual child info including milestones</h1>
+<h1><%= @child.name %> Milestones</h1>
 
-<div>
-      <%= @child.name %>
-      <%= @child.birth_date %>
-</div>
-
-<h1>Create milestone</h1>
-
-  <%= form_for :milestone, url: child_milestones_path(@child) do |c| %>
-    <%= c.hidden_field :user_id, :value => current_user.id %>
-    <%= c.text_field :name, placeholder: "Name", class: 'form-control' %>
-    <%= c.submit "Add a milestone!", class: "btn" %>
-
+<h3>
+  Birthday: <%= @child.birth_date %>
+</h3>
+<br>
+<br />
+<table>
+  <% @milestones.each do |m| %>
+    <tr>
+      <td><%= m.name %></td>
+      <td><%= link_to 'Edit', edit_child_milestone_path(@child, m) %></td>
+      <td><%= link_to 'Delete', child_milestone_path(@child, m), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
   <% end %>
-
- <!-- f.file_field :picture %> -->
-
-
+</table>
+<br />
+<br />
+<a class="btn btn-default" <%= link_to 'Add a new milestone', new_child_milestone_path(@child) %></a>
+<br />
+<br />
 <%= link_to 'Back', :children %>

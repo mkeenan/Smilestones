@@ -8,7 +8,7 @@ class ChildrenController < ApplicationController
 
   def show
     @child = Child.find(params[:id])
-    # @milestone = Milestone.all
+    @milestones = @child.milestones
   end
 
   def new
@@ -16,30 +16,23 @@ class ChildrenController < ApplicationController
   end
 
   def create
-    @child = Child.new(params.require(:child).permit(:name, :birth_date, :user_id))
-    @milestone = Milestone.new(params.require(:milestone).permit(:name))
+    @child = Child.new(params.require(:child).permit(:name, :birth_date, :user_id, :milestones =>[]))
+    # @milestone = Milestone.new(params.require(:milestone).permit(:name))
     if @child.save
-      flash[:success] = "Success! You added another child."
-      redirect_to :back
-    else
-      render 'new'
-    end
-    if @milestone.save
-     flash[:success] = "Success! You added another child."
-      redirect_to :back
-     else
-      render 'new'
+        flash[:success] = "Success! You added another child."
+        redirect_to :back
+      else
+        render 'new'
     end
   end
 
 
   def edit
     @child = Child.find(params[:id])
-    redirect_to child_path
   end
 
   def update
-    if @child.update(params.require(:child).permit(:name, :birth_date))
+    if @child.update(params.require(:child).permit(:name, :birth_date, :user_id, :milestones =>[]))
       redirect_to child_path
     else
       render 'edit'
@@ -47,6 +40,13 @@ class ChildrenController < ApplicationController
   end
 
   def destroy
-  end
+    @child = Child.find(params[:id])
+    if @child.destroy
+        flash[:success] = "Your child has been grounded from the site."
+        redirect_to children_path
+      else
+        render 'new'
+      end
+    end
 
 end

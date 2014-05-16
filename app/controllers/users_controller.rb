@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Congratulations! You have now signed up!"
+      flash[:success] = "You have now signed up! Login below to begin creating milestones..."
       redirect_to :root
     else
       render :new
