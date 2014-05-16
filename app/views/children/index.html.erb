@@ -1,13 +1,12 @@
 
-<h1>list of all of my children, add a child link - views/children/index</h1>
+<h1>My Children</h1>
 
 <div>
   <ul>
     <% @children.each do |c| %>
-    <li><%= c.name %></li>
+    <li><%= c.name %></li><%= link_to "See Child Info", child_path(c) %>
     <% end %>
   </ul>
-</div>
 
 <div class="new-child-form">
 

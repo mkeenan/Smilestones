@@ -7,6 +7,8 @@ class ChildrenController < ApplicationController
   end
 
   def show
+    @child = Child.find(params[:id])
+    # @milestone = Milestone.all
   end
 
   def new
@@ -15,17 +17,24 @@ class ChildrenController < ApplicationController
 
   def create
     @child = Child.new(params.require(:child).permit(:name, :birth_date, :user_id))
+    @milestone = Milestone.new(params.require(:milestone).permit(:name))
     if @child.save
       flash[:success] = "Success! You added another child."
       redirect_to :back
     else
       render 'new'
     end
+    if @milestone.save
+     flash[:success] = "Success! You added another child."
+      redirect_to :back
+     else
+      render 'new'
+    end
   end
 
 
   def edit
-    @child = child.find(params[:id])
+    @child = Child.find(params[:id])
     redirect_to child_path
   end
 

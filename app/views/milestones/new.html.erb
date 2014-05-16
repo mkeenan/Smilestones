@@ -1,1 +1,11 @@
 </h1>Create a new milestone - view/milestone/new.html</h1>
+
+<%= form_for(@milestone) do |m| %>
+  Name: <%= m.text_field, placeholder: "Name", :name %>
+  <%= m.date_field, placeholder: "Date", :date %>
+  <%= m.select, placeholder: "Milestone" [[""]] %>
+  <%= m.text_field, placeholder: "Notes", :notes %>
+  <%= c.submit %>
+<% end %>
+
+<%= f.file_field :picture %>
