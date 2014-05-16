@@ -11,6 +11,9 @@ gem 'genghis', '~> 1.4.1'
 gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.1'
 
+# Use rails_12factor to bundle everything(pre-compile) to push up for deployment
+gem 'rails_12factor'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
