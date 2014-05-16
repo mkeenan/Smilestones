@@ -19,12 +19,12 @@ end
 
 
 def show
-  @milestone = Milestone.find(params[:id])
+  # @milestone = Milestone.find(params[:id])
 end
 
 def edit
-  @child = Child.find(params[:child_id])
-  @milestone = Milestone.find(params[:id])
+  child = Child.find(params[:child_id])
+  @milestone = Milestone.find(params[:child_id])
 end
 
 def destroy
