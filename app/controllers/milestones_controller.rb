@@ -8,7 +8,7 @@ end
 
 def create
   @child = Child.find(params[:child_id])
-  @milestone = @child.milestones.new(params.require(:milestone).permit(:date, :notes, :name, :custom))
+  @milestone = @child.milestones.new(params.require(:milestone).permit(:date, :notes, :name, :custom, :picture))
   if @milestone.save
     flash[:success] = "You updated your milestones!"
     redirect_to child_path(@child)
@@ -24,12 +24,12 @@ end
 
 def edit
   child = Child.find(params[:child_id])
-  @milestone = Milestone.find(params[:child_id])
+  @milestone = child.milestones.find(params[:id])
 end
 
 def destroy
   child = Child.find(params[:child_id])
-  @milestone = Milestone.find(params[:id])
+  @milestone = child.milestones.find(params[:id])
   if @milestone.destroy
     flash[:success] = "Milestone deleted."
     redirect_to child_path(child)

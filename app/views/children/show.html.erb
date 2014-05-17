@@ -9,6 +9,7 @@
   <% @milestones.each do |m| %>
     <tr>
       <td><%= m.name %></td>
+      <td><%= image_tag m.picture.url %></td>
       <td><%= link_to 'Edit', edit_child_milestone_path(@child, m) %></td>
       <td><%= link_to 'Delete', child_milestone_path(@child, m), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

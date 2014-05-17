@@ -17,10 +17,9 @@ class ChildrenController < ApplicationController
 
   def create
     @child = Child.new(params.require(:child).permit(:name, :birth_date, :user_id, :milestones =>[]))
-    # @milestone = Milestone.new(params.require(:milestone).permit(:name))
     if @child.save
         flash[:success] = "Success! You added another child."
-        redirect_to :back
+        redirect_to children_path
       else
         render 'new'
     end
@@ -32,6 +31,7 @@ class ChildrenController < ApplicationController
   end
 
   def update
+    @child = Child.find(params[:id])
     if @child.update(params.require(:child).permit(:name, :birth_date, :user_id, :milestones =>[]))
       redirect_to child_path
     else
