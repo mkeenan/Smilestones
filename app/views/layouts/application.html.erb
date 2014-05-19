@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>SmilestonesApp</title>
-  <%= stylesheet_link_tag    "application" %>
+  <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Varela+Round' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="container-fluid">
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,6 +26,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
         <li><%= link_to "My Children", children_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -36,8 +38,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<br />
-<div class="container-fluid">
+<!-- <br /> -->
+
+<body>
+<div class="container">
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>

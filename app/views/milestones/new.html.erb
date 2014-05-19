@@ -1,11 +1,20 @@
-</h1>Create a new milestone</h1>
-
+<h2>Create a new milestone</h2>
+<br />
+<br />
 <%= form_for [@child, @milestone] do |m| %>
 <!-- collection_select includes: field/attribute, variable defined in the controller, value to be stored (converted to string), value want displayed(also converted to string)  -->
   Name: <%= m.collection_select :name, @type, :to_s, :to_s %>
-  <%= m.date_field :date %>
-  <%= m.text_field :notes %>
+  <br />
+  <br />
+  Date: <%= m.date_field :date %>
+  <br />
+  <br />
+  Notes: <%= m.text_field :notes %>
+  <br />
+  <br />
   <%= m.file_field :picture %>
+  <br />
+  <br />
   <%= m.submit %>
 <% end %>
 

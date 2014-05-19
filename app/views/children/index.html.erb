@@ -1,32 +1,21 @@
-<h1>My Children</h1>
+<h2>My Children</h2>
 <br />
-<tbody>
-  <tr>
-    <% @children.each do |c| %>
-      <td><%= c.name %></td>
-      <td><%= link_to "See Child Info", child_path(c) %></td>
-      <td><%= link_to 'Edit', edit_child_path(c) %></td>
-      <td><%= link_to 'Delete', child_path(c), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-   <br />
-   <br />
-    <% end %>
-  </tr>
-</tbody>
-
+<div "class=table-responsive">
+  <table class="table table-condensed">
+    <tr>
+      <% @children.each do |c| %>
+        <td><h4><%= c.name %></h4></td>
+        <td><%= link_to "See Child Info", child_path(c) %></td>
+        <td><%= link_to 'Edit', edit_child_path(c) %></td>
+        <td><%= link_to 'Delete', child_path(c), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+      <br />
+    </tr>
+  </table>
+</div>
 
 <a class="btn btn-default" <%= link_to 'Add a new child', new_child_path %></a>
-
-<!-- moved the form below to a partial so can be accessed both by new & edit views -->
-
-<!-- <div class="new-child-form">
-
-  <= form_for :child do |c| %>
-    <= c.hidden_field :user_id, :value => current_user.id %>
-    <= c.text_field :name, placeholder: "Name", class: 'form-control' %>
-    <= c.date_field :birth_date, placeholder: "Birthdate", class: 'form-control' %>
-    <br />
-    <= c.submit "Add a child!", class: "btn" %>
-
-  < end %>
-
-</div> -->
+<br />
+<br />
+<hr>
+<a class="btn btn-primary" <%= link_to 'Create a SMILESTONE' %></a>

@@ -1,16 +1,18 @@
-<h1><%= @child.name %> Milestones</h1>
+<h2><%= @child.name %>'s Milestones</h2>
 
 <h3>
-  Birthday: <%= @child.birth_date %>
+  Birthday: <%= @child.birth_date.strftime("%m/%d/%Y") %>
 </h3>
 <br>
 <br />
-<table>
+<table class="table table-condensed">
   <% @milestones.each do |m| %>
     <tr>
       <td><%= m.name %></td>
-      <td><%= image_tag m.picture.url %></td>
-      <td><%= link_to 'Edit', edit_child_milestone_path(@child, m) %></td>
+      <div class="image">
+        <td><%= image_tag m.picture.url %></td>
+      </div>
+<!--       <td><= link_to 'Edit', edit_child_milestone_path(@child, m) %></td> -->
       <td><%= link_to 'Delete', child_milestone_path(@child, m), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
@@ -18,6 +20,9 @@
 <br />
 <br />
 <a class="btn btn-default" <%= link_to 'Add a new milestone', new_child_milestone_path(@child) %></a>
+<br />
+<br />
+<a class="btn btn-primary pull right" <%= link_to 'Create a SMILESTONE' %></a>
 <br />
 <br />
 <%= link_to 'Back', :children %>

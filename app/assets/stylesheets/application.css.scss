@@ -12,3 +12,38 @@
  *= require_tree .
  */
 @import "bootstrap";
+
+
+
+body {
+  font-family: "Varela Round", sans-serif;
+  font-size: 20px;
+  background-image: url(Wood2.jpg);
+}
+
+.mainbackground {
+    background-image: url(Wood2.jpg);
+}
+
+h1 {
+  font-family: "The Girl Next Door", cursive, bold;
+  font-size: 150px;
+  color: blue;
+}
+
+h2 {
+  font-size: 35px;
+  color: #CC0066;
+}
+
+#home, #about {
+  background-image: url(Wood2.jpg);
+  text-align: center;
+  margin: 50px auto 30px auto;
+}
+
+#features {
+  background-color: white;
+  text-align: center;
+  margin: 50px auto 30px auto;
+}
