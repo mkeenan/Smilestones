@@ -4,7 +4,7 @@ class MilestonesController < ApplicationController
 def new
   @milestone = Milestone.new
   @child = Child.find(params[:child_id])
-  @type = ["first steps", "first birthday", "first day of school", "wedding"]
+  @type = ["Choose a Milestone", "first steps", "first birthday", "first day of school", "wedding"]
 end
 
 def create

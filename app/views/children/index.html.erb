@@ -1,21 +1,25 @@
-<h2>My Children</h2>
-<br />
-<div "class=table-responsive">
-  <table class="table table-condensed">
-    <tr>
-      <% @children.each do |c| %>
-        <td><h4><%= c.name %></h4></td>
-        <td><%= link_to "See Child Info", child_path(c) %></td>
-        <td><%= link_to 'Edit', edit_child_path(c) %></td>
-        <td><%= link_to 'Delete', child_path(c), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-      <br />
-    </tr>
-  </table>
-</div>
+<div class="container-fluid">
+  <h2>My Children</h2>
+  <br />
+  <a class="btn btn-primary" <%= link_to 'Add a new child', new_child_path %></a>
+  <br />
+  <div "class=table-responsive">
+    <table class="table table-condensed">
 
-<a class="btn btn-default" <%= link_to 'Add a new child', new_child_path %></a>
-<br />
-<br />
-<hr>
-<a class="btn btn-primary" <%= link_to 'Create a SMILESTONE' %></a>
+        <% @children.each do |c| %>
+          <tr>
+            <td><%= c.name %></td>
+            <td><%= link_to "See Child Info", child_path(c) %></td>
+            <td><%= link_to 'Edit', edit_child_path(c) %></td>
+            <td><%= link_to 'Delete', child_path(c), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <br />
+        <% end %>
+    </table>
+  </div>
+
+
+  <hr>
+  <!-- <a class="btn btn-primary" <%#= link_to 'Create a SMILESTONE' %></a> -->
+  <%= link_to 'Back', :root %>
+</div>

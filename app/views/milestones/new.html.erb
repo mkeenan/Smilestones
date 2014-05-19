@@ -1,21 +1,22 @@
-<h2>Create a new milestone</h2>
-<br />
-<br />
-<%= form_for [@child, @milestone] do |m| %>
-<!-- collection_select includes: field/attribute, variable defined in the controller, value to be stored (converted to string), value want displayed(also converted to string)  -->
-  Name: <%= m.collection_select :name, @type, :to_s, :to_s %>
+<div class="container-fluid">
+  <h2>Create a new milestone</h2>
   <br />
   <br />
-  Date: <%= m.date_field :date %>
+  <%= form_for [@child, @milestone] do |m| %>
+  <!-- collection_select includes: field/attribute, variable defined in the controller, value to be stored (converted to string), value want displayed(also converted to string)  -->
+    <%= m.collection_select :name, @type, :to_s, :to_s %>
+    <br />
+    <br />
+    <%= m.date_field :date, placeholder: "Date", class: 'form-control' %>
+    <br />
+    <%= m.text_field :notes, placeholder: "Add Notes...", class: 'form-control' %>
+    <br />
+    <%= m.file_field :picture %>
+    <br />
+    <%= m.submit "Update!", class: "btn btn-primary pull-right"%>
+  <% end %>
   <br />
-  <br />
-  Notes: <%= m.text_field :notes %>
-  <br />
-  <br />
-  <%= m.file_field :picture %>
-  <br />
-  <br />
-  <%= m.submit %>
-<% end %>
-
+  <hr>
+  <%= link_to 'Back', :children %>
+</div>
 

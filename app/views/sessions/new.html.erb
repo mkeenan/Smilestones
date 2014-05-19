@@ -3,43 +3,50 @@
     <h1>Smilestones</h1>
     <h2>Where memories come to life!</h2>
     <br />
-    <br />
-    <div class = "row">
-        <%= form_for :session, :url=> sessions_path do |f| %>
-          Email: <%= f.text_field :email %>
-          Password: <%= f.password_field :password %>
-          <%= f.submit 'Login' %>
-          <br>
-          </br>
-          <strong>New to Smilestones?<%= link_to " Sign up here...", new_user_path %></strong>
-        <% end %>
-    </div>
+   <div class = "container">
+      <div class = "well well-md">
+          <%= form_for :session, :url=> sessions_path do |f| %>
+            <%= f.text_field :email, placeholder: "Email" %>
+            <br />
+            <br />
+            <%= f.password_field :password, placeholder: "Password" %>
+            </br />
+            <br />
+            <%= f.submit 'Login' %>
+            <br />
+            </br />
+            <strong>New to Smilestones?<br /><%= link_to " Sign up here...", new_user_path %></strong>
+          <% end %>
+      </div>
+     </div>
   </div>
-
+<hr>
   <div id="features">
-  <div class="row">
-    <div class="col-md-4">
-    <div class="text-left" class="step1"></div>
-        <h2>one</h2>
-        <h3>Add milestones</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="text-left" class="step1"></div>
+            <h2>one</h2>
+            <h3>Add milestones</h3>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center" class="step2"></div>
+            <h2>two</h2>
+            <h3>Choose a style <br /> & generate a code</h3>
+      </div>
+      <div class="col-md-4">
+        <div class="text-right" class="step3"></div>
+            <h2>three</h2>
+            <h3>Print & share!</h3>
+      </div>
     </div>
-
-    <div class="col-md-4">
-    <div class="text-center" class="step2"></div>
-        <h2>two</h2>
-        <h3>Choose a style <br /> & generate a code</h3>
-    </div>
-
-    <div class="col-md-4">
-    <div class="text-right" class="step3"></div>
-        <h2>three</h2>
-        <h3>Print & share!</h3>
-    </div>
-  </div>
-
+ </div>
+<hr>
   <div class= "row" id="about">
     <h2>About</h2>
-    Smilestones was founded by a mom with too many children who took a ridiculous amount of pictures and videos of her kids. As time went on and the precious memories filled her hard drive, she realized that there might be a better way to share and view important milestones. Printing photos felt anti-climactic and electronic data-sharing either felt impersonal or risky. Maybe printed Christmas cards, wedding pictures and birth announcements would be more engaging if they were interactive. Smilestones was created to bridge the gap between photos and videos...to bring memories to life!
+    <br />
+    <p>
+    Smilestones was founded by a mom with too many children who took a ridiculous amount of pictures and videos of her kids. As time went on and the precious memories filled her hard drive, she realized that there might be a better way to share and view important milestones. Printing photos felt anti-climactic and electronic data-sharing felt impersonal and possibly risky. Maybe printed Christmas cards, wedding pictures and birth announcements could be more engaging if they were interactive. Smilestones was created to bridge the gap between photos and videos...to bring memories to life!
+  </p>
   </div>
-  </div>
+
 </div>

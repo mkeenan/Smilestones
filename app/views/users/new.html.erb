@@ -1,9 +1,10 @@
-
-<h2>New user sign-up</h2>
-<br />
-<%= form_for @user do |f| %>
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  <%= f.submit %>
-<% end %>
+<div class="container-fluid">
+  <h2>New user sign-up</h2>
+  <br />
+  <%= form_for @user do |f| %>
+    Name: <%= f.text_field :name %>
+    Email: <%= f.text_field :email %>
+    Password: <%= f.password_field :password %>
+    <%= f.submit %>
+  <% end %>
+</div>
