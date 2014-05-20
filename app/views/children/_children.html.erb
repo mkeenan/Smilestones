@@ -5,6 +5,7 @@
   <%= form_for @child do |c| %>
     <%= c.hidden_field :user_id, :value => current_user.id %>
     <%= c.text_field :name, placeholder: "Name", class: 'form-control' %>
+    <br />
     <%= c.date_field :birth_date, placeholder: "Birthdate", class: 'form-control' %>
     <br />
     <%= c.submit "Update!", class: "btn btn-primary pull-right" %>

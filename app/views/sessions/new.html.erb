@@ -1,26 +1,32 @@
 <div class="mainbackground">
-  <div class = "row" id="home", style="text-align: center">
-    <h1>Smilestones</h1>
-    <h2>Where memories come to life!</h2>
-    <br />
-   <div class = "container">
-      <div class = "well well-md">
+  <div class = "row" id="home">
+      <div class = "title">
+        <h1>Smilestones</h1>
+        <br />
+        <div class="subtitle">
+          <strong>Bring your memories<br /> to life!</strong>
+        </div>
+      </div>   
+      <br />
+     <div class = "mainlogin">
+        <div class = "well well-md">
           <%= form_for :session, :url=> sessions_path do |f| %>
             <%= f.text_field :email, placeholder: "Email" %>
             <br />
             <br />
             <%= f.password_field :password, placeholder: "Password" %>
-            </br />
             <br />
-            <%= f.submit 'Login' %>
+            <br />
+            <%= f.submit 'Login', class: "btn btn-primary" %>
             <br />
             </br />
             <strong>New to Smilestones?<br /><%= link_to " Sign up here...", new_user_path %></strong>
           <% end %>
-      </div>
-     </div>
+        </div>
+       </div>
   </div>
-<hr>
+</div>
+
   <div id="features">
     <div class="row">
       <div class="col-md-4">
@@ -40,13 +46,14 @@
       </div>
     </div>
  </div>
-<hr>
+
   <div class= "row" id="about">
     <h2>About</h2>
     <br />
     <p>
-    Smilestones was founded by a mom with too many children who took a ridiculous amount of pictures and videos of her kids. As time went on and the precious memories filled her hard drive, she realized that there might be a better way to share and view important milestones. Printing photos felt anti-climactic and electronic data-sharing felt impersonal and possibly risky. Maybe printed Christmas cards, wedding pictures and birth announcements could be more engaging if they were interactive. Smilestones was created to bridge the gap between photos and videos...to bring memories to life!
+    Smilestones was created by a mom who took a ridiculous number of pictures and videos of her kids. As the precious memories flew by and filled her hard drive, she realized that there might be a better way to remember important milestones. Printing plain photos was anti-climactic, online sharing felt impersonal, sometimes unsafe and scrapbooks were too time consuming.
+    <br />
+    <br />
+    Maybe printed cards, pictures and announcements could be more engaging if they were interactive? Smilestones was born to bridge the gap between photos and videos...to help memories last by bringing them to life!
   </p>
   </div>
-
-</div>
