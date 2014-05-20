@@ -12,9 +12,9 @@
           <td><%= m.name %></td>
           <td class="image">
             <!-- image tag pulls the image using the "image" CSS styles, set to thumbnail size. link_to links to original-size view of the picture -->
-            <%= link_to m.picture.url(:original) do %>
+            <%#= link_to m.picture.url(:original) do %>
             <%= image_tag(m.picture.url) %>
-            <% end %>
+            <%# end %> -->
           </td>
 
   <!-- Placeholder for editing function      <td><= link_to 'Edit', edit_child_milestone_path(@child, m) %></td> -->
