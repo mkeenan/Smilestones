@@ -3,7 +3,9 @@ class Milestone
   include Mongoid::Paperclip
 
   has_mongoid_attached_file :picture
-  # add parameters to this to constrain image size
+  #    :styles => {
+  #     :thumb => "100x100#",   # Centrally cropped
+  #     :small  => "150x150>"}  # Only squish if it's larger than this
 
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
