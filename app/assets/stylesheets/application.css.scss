@@ -59,7 +59,7 @@ h2 {
 
 .mainbackground {
   height: 500px;
-  background-image: url(austin2.jpeg);
+  background-image: asset-data-url('austin2.jpeg');
   background-size: cover;
   background-repeat: no repeat;
 }
