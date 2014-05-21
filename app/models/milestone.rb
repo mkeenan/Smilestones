@@ -2,12 +2,7 @@ class Milestone
   include Mongoid::Document
   include Mongoid::Paperclip
 
-  has_mongoid_attached_file :picture,
-     :s3_credentials => {
-      :bucket => ENV['marywdi'],
-      :access_key_id => ENV['AKIAJRVTCTZTLEHPPNDA'],
-      :secret_access_key => ENV['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']
-    }
+  has_mongoid_attached_file :picture
   #    :styles => {
   #     :thumb => "100x100#",   # Centrally cropped
   #     :small  => "150x150>"}  # Only squish if it's larger than this
