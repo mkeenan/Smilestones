@@ -1,29 +1,28 @@
-<div class="mainbackground">
+<div class="container-fluid mainbackground">
   <div class = "row" id="home">
-      <div class = "title">
+      <div class = "col-md-8 title">
         <h1>Smilestones</h1>
-        <br />
         <div class="subtitle">
-          <strong>Bring your memories<br /> to life!</strong>
+          <strong>Bring your memories<br/> to life!</strong>
         </div>
       </div>   
       <br />
-     <div class = "mainlogin">
-        <div class = "well well-md">
-          <%= form_for :session, :url=> sessions_path do |f| %>
-            <%= f.text_field :email, placeholder: "Email" %>
-            <br />
-            <br />
-            <%= f.password_field :password, placeholder: "Password" %>
-            <br />
-            <br />
-            <%= f.submit 'Login', class: "btn btn-primary" %>
-            <br />
-            </br />
-            <strong>New to Smilestones?<br /><%= link_to " Sign up here...", new_user_path %></strong>
-          <% end %>
-        </div>
-       </div>
+    <div class = "col md-4 mainlogin">
+      <div class = "well well-md">
+        <%= form_for :session, :url=> sessions_path do |f| %>
+          <%= f.text_field :email, placeholder: "Email" %>
+          <br/>
+          <br/>
+          <%= f.password_field :password, placeholder: "Password" %>
+          <br/>
+          <br/>
+          <%= f.submit 'Login', class: "btn btn-primary" %>
+          <br/>
+          </br/>
+          <strong>New to Smilestones?<br/><%= link_to "Sign up here...", new_user_path %></strong>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -31,17 +30,17 @@
     <div class="row">
       <div class="col-md-4">
         <div class="text-left" class="step1"></div>
-            <h2>one</h2>
+            <h2 class="glyphicon glyphicon-plus"></h2>
             <h3>Add milestones</h3>
       </div>
       <div class="col-md-4">
         <div class="text-center" class="step2"></div>
-            <h2>two</h2>
-            <h3>Choose a style <br /> & generate a code</h3>
+            <h2 class="glyphicon glyphicon-barcode"></h2>
+            <h3>Choose a style and code</h3>
       </div>
       <div class="col-md-4">
         <div class="text-right" class="step3"></div>
-            <h2>three</h2>
+            <h2 class="glyphicon glyphicon-picture"></h2>
             <h3>Print & share!</h3>
       </div>
     </div>
