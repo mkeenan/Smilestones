@@ -1,28 +1,12 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Smilestones is an app that is in development. It is designed to bridge static photos and videos through use of a simple QR code. Users can upload photos and style a layout that includes a dedicated QR code. The code is connected to a video that pertains to the subject in the photo. When the code is read by the receiver of the printed "smilestone", the video is played.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Smilestones is built using Rails 4.0.4, Ruby, Bootstrap, and Paperclip. It includes authentication using BCrypt 3.1.7.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Important information:
+
+- AWS is used for photo/video storage.
+
+Note: It is a work in progress. Future functionality will include video uploading & association to photos/milestones and the ability to style the smilestone frame, create a QR code and print. Reference to "children" may change to a more generic sub-user.

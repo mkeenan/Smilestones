@@ -5,7 +5,7 @@ class Milestone
   has_mongoid_attached_file :picture
   #    :styles => {
   #     :thumb => "100x100#",   # Centrally cropped
-  #     :small  => "150x150>"}  # Only squish if it's larger than this
+  #     :small  => "150x150>"}  # limit size
 
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
