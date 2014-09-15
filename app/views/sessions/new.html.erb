@@ -2,14 +2,14 @@
 
 <div class="container-fluid mainbackground">
   <div class = "row" id="home">
-      <div class = "col-md-8 title">
+      <div class = "col-md-7 title">
         <h1>Smilestones</h1>
         <div class="subtitle">
           <strong>Bring your memories<br/> to life!</strong>
         </div>
       </div>   
       <br />
-    <div class = "col md-4 mainlogin">
+    <div class = "col md-5 mainlogin">
       <div class = "well well-md">
         <%= form_for :session, :url=> sessions_path do |f| %>
           <%= f.text_field :email, placeholder: "Email" %>
@@ -28,7 +28,7 @@
   </div>
 </div>
 
-  <div id="features">
+  <div id="features" class="clearfix">
     <div class="row">
       <div class="col-md-4">
         <div class="text-left" class="step1"></div>
