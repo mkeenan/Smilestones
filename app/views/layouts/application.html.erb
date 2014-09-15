@@ -36,7 +36,6 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "My Milestones", children_path %></li>
-        <li><%= link_to "Sign In", sessions_path %></li>
         <% if current_user %>
           <li><%= link_to "Sign Out", sessions_path, :method => :delete %></li>
         <% end %>
